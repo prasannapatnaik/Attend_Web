@@ -2,41 +2,88 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h4>eSSL Attendance System</h4>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    <asp:RadioButton ID="rd_ByMonth" runat="server" class="btn btn-default" GroupName="SelectType" Text="By Day" />
+                </p>
+
+            </div>
+           
+            <div class="col-md-6">
+                <p>
+                    <asp:RadioButton ID="rd_ByCustom" runat="server" class="btn btn-default" GroupName="SelectType" Text="Custom Date" Checked="True"/>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+               <p class="lead">
+                   <asp:Label ID="Label1" runat="server" Text="Enter Date : "></asp:Label>
+                    &nbsp;<asp:TextBox ID="txt_Date" runat="server" TextMode="Date" class="btn btn-default"></asp:TextBox>
+                   
+                </p>
+            </div>
+            
+            <div class="col-md-6">
+                <p class="lead">
+                    Start Date :
+            <asp:TextBox ID="dt_From" runat="server" TextMode="Date" class="btn btn-default"></asp:TextBox>
+                </p>
+                <p class="lead">
+                    End Date :
+            <asp:TextBox ID="dt_To" runat="server" TextMode="Date" class="btn btn-default"></asp:TextBox>
+                </p>
+                <p class="lead">
+                    <asp:Label ID="Label3" runat="server" Text="Employee Name : "></asp:Label>
+                    &nbsp;<asp:DropDownList ID="dp_EmpName" runat="server" class="btn btn-default" OnLoad="dp_EmpName_Load"></asp:DropDownList>
+                </p>
+            </div>
+        </div>
+        </div>
+       
+    <div class="col-md-12">
+        <p class="lead">
+            <asp:Button ID="bttn_Submit" runat="server" class="btn btn-default" Text="Submit" OnClick="bttn_Submit_Click" />
+        </p>
+    </div>
+    <div class="col-md-12">
+        <p class="lead">
+            <asp:Label ID="DisxLab" runat="server" Text="" class="btn btn-default"></asp:Label>
+            
+        </p>
+        <p class="lead">
+            <asp:GridView ID="GridDix" runat="server" class="btn btn-default" OnPageIndexChanging="OnPageIndexChanging" CellPadding="4" ForeColor="#333333" GridLines="Both" PageSize="20" AllowPaging="True" HorizontalAlign="Center">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
+
+                <EditRowStyle BackColor="#999999"></EditRowStyle>
+
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"></FooterStyle>
+
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                <PagerStyle HorizontalAlign="Center" BackColor="#284775" ForeColor="White"></PagerStyle>
+
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333"></RowStyle>
+
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333"></SelectedRowStyle>
+
+                <SortedAscendingCellStyle BackColor="#E9E7E2"></SortedAscendingCellStyle>
+
+                <SortedAscendingHeaderStyle BackColor="#506C8C"></SortedAscendingHeaderStyle>
+
+                <SortedDescendingCellStyle BackColor="#FFFDF8"></SortedDescendingCellStyle>
+
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE"></SortedDescendingHeaderStyle>
+            </asp:GridView>
+        </p>
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
+    
 
 </asp:Content>
